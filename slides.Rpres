@@ -1,0 +1,40 @@
+Iris Species Classification
+========================================================
+author: Mauricio Santelices
+date: 02/03/2021
+autosize: true
+
+Overview
+========================================================
+
+The application let users to determine the species of a Iris flower by its sepal length, sepal width, petal length and petal width, using a Random Forest classification model.
+
+The app is available at: https://msantelices.shinyapps.io/iris_classification/
+
+The app will output the expected species with the corresponding probability.
+
+
+Dataset
+========================================================
+The model was built using the Iris dataset.
+
+```{r}
+head(iris)
+```
+
+
+
+Model
+========================================================
+We created a random forest with 50 trees, using Species as outcoume and Sepal.Length, Sepal.Width, Petal.Length and Petal.Width as variables. 
+
+
+Model
+========================================================
+
+```{r}
+library(randomForest)
+
+randomForest(Species ~ ., data = iris, ntree = 50)
+```
+
